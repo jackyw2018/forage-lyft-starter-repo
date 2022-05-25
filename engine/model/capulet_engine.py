@@ -1,5 +1,5 @@
 from engine.engine import Engine
-from utils.validators import validate_integer
+from ..utils.validators import validate_integer
 
 
 class CapuletEngine(Engine):
@@ -28,7 +28,7 @@ class CapuletEngine(Engine):
         Returns:
             bool 
         """
-        return self.mileage_since_last_service >= CapuletEngine._MILEAGE_TO_SERVICE
+        return self.mileage_since_last_service > CapuletEngine._MILEAGE_TO_SERVICE
 
     @property
     def mileage_since_last_service(self) -> int:

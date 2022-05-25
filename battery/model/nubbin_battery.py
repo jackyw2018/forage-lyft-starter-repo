@@ -1,6 +1,6 @@
 from battery.battery import Battery
-from utils.validators import validate_date
-from utils.datetime_helpers import DAYS_IN_YEAR
+from ..utils.validators import validate_date
+from ..utils.datetime_helpers import DAYS_IN_YEAR
 
 from datetime import datetime, timedelta
 
@@ -20,7 +20,7 @@ class NubbinBattery(Battery):
         super().__init__()
 
         validate_date('last_service_date', last_service_date,
-                      max_value=datetime.today())
+                      max_value=datetime.today().date())
         self._last_service_date = last_service_date
 
         validate_date('current_date', current_date,
@@ -37,7 +37,7 @@ class NubbinBattery(Battery):
         return self.days_since_last_service > NubbinBattery._SERVICE_THRESHOLD_TIMEDELTA
 
     @property
-    def days_since_last_service(self) -> datetime.timedelta:
+    def days_since_last_service(self) -> timedelta:
         """
         Days since last servicing
 

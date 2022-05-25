@@ -1,2 +1,2 @@
-from model import NubbinBattery, SpindlerBattery
-from battery import Battery
+from .model import NubbinBattery, SpindlerBattery
+from .battery import Battery

@@ -1,5 +1,5 @@
 from engine.engine import Engine
-from utils.validators import validate_integer, validate_boolean
+from ..utils.validators import validate_integer, validate_boolean
 
 
 class SternmanEngine(Engine):

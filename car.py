@@ -28,12 +28,12 @@ class Car(Serviceable):
         Returns:
             bool
         """
-        return self._battery.needs_service() and self._engine.needs_service()
+        return self._battery.needs_service() or self._engine.needs_service()
 
 
 class CarFactory():
 
-    @classmethod
+    @staticmethod
     def create_calliope(
             current_date: datetime.date, last_service_date: datetime.date,
             current_mileage: int, last_service_mileage: int) -> Car:
@@ -52,7 +52,7 @@ class CarFactory():
         battery = SpindlerBattery(last_service_date, current_date)
         return Car(engine, battery)
 
-    @classmethod
+    @staticmethod
     def create_glissade(
             current_date: datetime.date, last_service_date: datetime.date,
             current_mileage: int, last_service_mileage: int) -> Car:
@@ -71,7 +71,7 @@ class CarFactory():
         battery = SpindlerBattery(last_service_date, current_date)
         return Car(engine, battery)
 
-    @classmethod
+    @staticmethod
     def create_palindrome(
             current_date: datetime.date, last_service_date: datetime.date,
             warning_light_on: bool) -> Car:
@@ -89,7 +89,7 @@ class CarFactory():
         battery = SpindlerBattery(last_service_date, current_date)
         return Car(engine, battery)
 
-    @classmethod
+    @staticmethod
     def create_rorschach(
             current_date: datetime.date, last_service_date: datetime.date,
             current_mileage: int, last_service_mileage: int) -> Car:
@@ -108,7 +108,7 @@ class CarFactory():
         battery = NubbinBattery(last_service_date, current_date)
         return Car(engine, battery)
 
-    @classmethod
+    @staticmethod
     def create_thovex(
             current_date: datetime.date, last_service_date: datetime.date,
             current_mileage: int, last_service_mileage: int) -> Car:

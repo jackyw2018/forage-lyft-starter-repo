@@ -1,2 +1,2 @@
-from model import CapuletEngine, SternmanEngine, WilloughbyEngine
-from engine import Engine
+from .model import CapuletEngine, SternmanEngine, WilloughbyEngine
+from .engine import Engine
