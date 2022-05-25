@@ -1,13 +1,13 @@
 from abc import ABC, abstractmethod
 
 
-class Engine(ABC):
-    @abstractmethod
+class Battery(ABC):
+    @ abstractmethod
     def needs_service() -> bool:
         """
-        Whether the engine needs serivcing
+        Whether the battery needs serivcing
 
         Returns:
-            bool 
+            bool
         """
         pass

@@ -21,7 +21,7 @@ class CapuletEngine(Engine):
                          last_service_mileage, custom_min_message='Current mileage should be greater than last service mileage.')
         self._current_mileage = current_mileage
 
-    def need_service(self) -> bool:
+    def needs_service(self) -> bool:
         """
         Whether the engine needs serivcing
 
